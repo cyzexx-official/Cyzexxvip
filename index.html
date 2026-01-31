@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyzexx — Smart Trading</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#000;
+  color:#d4af37;
+}
+header {
+  padding:20px;
+  text-align:center;
+  border-bottom:1px solid #d4af37;
+}
+nav a {
+  color:#d4af37;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+section {
+  padding:40px 20px;
+  display:none;
+}
+section.active {
+  display:block;
+}
+h1,h2,h3 { color:#d4af37; }
+.box {
+  border:1px solid #d4af37;
+  padding:20px;
+  margin:20px 0;
+}
+button {
+  background:#d4af37;
+  color:#000;
+  padding:10px 20px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+input {
+  padding:8px;
+  margin:5px 0;
+  width:100%;
+}
+.footer {
+  text-align:center;
+  opacity:.6;
+  font-size:14px;
+}
+</style>
+
+<script>
+function show(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+}
+
+function vipLogin(){
+  let u=document.getElementById("user").value;
+  let p=document.getElementById("pass").value;
+  if(u==="vip" && p==="1234"){
+    show("vip");
+  } else {
+    alert("Login yoki parol noto‘g‘ri");
+  }
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <h1>CYZEXX</h1>
+  <p>SMART TRADING. REAL KNOWLEDGE.</p>
+  <nav>
+    <a onclick="show('home')">Home</a>
+    <a onclick="show('why')">Why Cyzexx?</a>
+    <a onclick="show('edu')">Education</a>
+    <a onclick="show('live')">Live Market</a>
+    <a onclick="show('login')">VIP</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <h2>Cyzexx.com ga xush kelibsiz</h2>
+  <p>Trade — bu taxmin emas. Trade — bu bilim, tahlil va intizom.</p>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <h2>Nima uchun Cyzexx?</h2>
+  <ul>
+    <li>❌ Guaranteed profit yo‘q</li>
+    <li>✅ Halollik va bilim</li>
+    <li>✅ Uzoq muddatli fikrlash</li>
+  </ul>
+</section>
+
+<!-- EDUCATION -->
+<section id="edu">
+  <h2>Education</h2>
+  <div class="box">
+    <p>• Trading asoslari</p>
+    <p>• EMA 50 / 200</p>
+    <p>• Risk Management</p>
+  </div>
+</section>
+
+<!-- LIVE MARKET -->
+<section id="live">
+  <h2>Live Market</h2>
+
+  <div class="tradingview-widget-container">
+    <script src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js">
+    {
+      "colorTheme":"dark",
+      "isTransparent":true,
+      "showSymbolLogo":true,
+      "width":"100%",
+      "height":"500",
+      "tabs":[
+        {"title":"Crypto","symbols":[
+          {"s":"BINANCE:BTCUSDT"},
+          {"s":"BINANCE:ETHUSDT"},
+          {"s":"BINANCE:BNBUSDT"},
+          {"s":"BINANCE:SOLUSDT"}
+        ]},
+        {"title":"Forex","symbols":[
+          {"s":"FX:EURUSD"},
+          {"s":"FX:GBPUSD"},
+          {"s":"OANDA:XAUUSD"}
+        ]}
+      ]
+    }
+    </script>
+  </div>
+</section>
+
+<!-- LOGIN -->
+<section id="login">
+  <h2>VIP LOGIN</h2>
+  <div class="box">
+    <input id="user" placeholder="Login">
+    <input id="pass" type="password" placeholder="Parol">
+    <button onclick="vipLogin()">Kirish</button>
+    <p>VIP narxi: <b>20 USDT</b></p>
+    <p>VIP olish uchun Telegram:  
+      <a href="https://t.me/Cyzexx337" target="_blank">@Cyzexx337</a>
+    </p>
+  </div>
+</section>
+
+<!-- VIP -->
+<section id="vip">
+  <h2>VIP DASHBOARD</h2>
+
+  <h3>BTCUSDT</h3>
+  <div class="tradingview-widget-container">
+    <script src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js">
+    {
+      "symbol":"BINANCE:BTCUSDT",
+      "interval":"60",
+      "theme":"dark",
+      "autosize":true
+    }
+    </script>
+  </div>
+
+  <h3>ETHUSDT</h3>
+  <div class="tradingview-widget-container">
+    <script src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js">
+    {
+      "symbol":"BINANCE:ETHUSDT",
+      "interval":"60",
+      "theme":"dark",
+      "autosize":true
+    }
+    </script>
+  </div>
+</section>
+
+<div class="footer">
+⚠️ Cyzexx moliyaviy maslahat bermaydi. Barcha savdolar shaxsiy javobgarlikda.
+</div>
+
+</body>
+  </html>
